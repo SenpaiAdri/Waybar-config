@@ -1,0 +1,398 @@
+/* 
+ * =============================================================================
+ *  MODERN WAYBAR THEME - CATPPUCCIN MOCHA
+ * =============================================================================
+ *  A sleek, modern design with floating elements, smooth transitions,
+ *  and enhanced visual hierarchy
+ */
+
+/* =============================================================================
+ *  BASE STYLES & TYPOGRAPHY
+ * =============================================================================
+ */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Symbols Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: #000000;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+window#waybar.hidden {
+    opacity: 0;
+}
+
+/* =============================================================================
+ *  MODULE BASE STYLES
+ * =============================================================================
+ */
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: transparent;
+}
+
+.modules-left > widget > *,
+.modules-center > widget > *,
+.modules-right > widget > * {
+    background-color: rgba(30, 30, 46, 0.9);
+    color: #cdd6f4;
+    border-radius: 20px;
+    padding: 2px 14px;
+    margin: 2px 4px;
+    border: 2px solid rgba(137, 180, 250, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 13px;
+}
+
+/* .modules-left > widget > *:hover,
+.modules-center > widget > *:hover,
+.modules-right > widget > *:hover {
+    background-color: rgba(49, 50, 68, 0.9);
+    border-color: rgba(137, 180, 250, 0.4);
+    box-shadow: 0 6px 16px rgba(137, 180, 250, 0.2);
+} */
+
+/* =============================================================================
+ *  WORKSPACES - Enhanced with better visual feedback
+ * =============================================================================
+ */
+
+#workspaces {
+    background-color: rgba(30, 30, 46, 0.9);
+    padding: 3px 8px;
+    margin-top: 2px;
+    margin-left: 0;
+    border-radius: 20px;
+    border: 2px solid rgba(137, 180, 250, 0.15);
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); */
+}
+
+#workspaces button {
+    padding: 0px 6px;
+    margin: 0 2px;
+    background-color: transparent;
+    color: #6c7086;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    font-size: 50px;
+    font-weight: bold;
+    background-image: none;
+    box-shadow: none;
+}
+
+#workspaces button:hover {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    color: #89b4fa;
+}
+
+#workspaces button.active {
+    color: #89b4fa;
+    /* background-color: rgba(137, 180, 250, 0.15); */
+}
+
+#workspaces button.urgent {
+    color: #f38ba8;
+    /* background-color: rgba(243, 139, 168, 0.15); */
+}
+
+/* =============================================================================
+ *  WINDOW TITLE - With icon support
+ * =============================================================================
+ */
+
+#window {
+    background-color: rgba(30, 30, 46, 0.9);
+    color: #bac2de;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 2px 16px;
+    /* margin-top: 2px; */
+    /* margin-left: 6px; */
+}
+
+#window:hover {
+    background-color: rgba(49, 50, 68, 0.9);
+    color: #cdd6f4;
+}
+
+/* =============================================================================
+ *  CLOCK - Premium centered design
+ * =============================================================================
+ */
+
+#clock {
+    background: linear-gradient(135deg, rgba(30, 30, 46, 0.9) 0%, rgba(49, 50, 68, 0.9) 100%);
+    color: #89b4fa;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 2px 20px;
+    margin: 2px 0;
+    border: 2px solid rgba(137, 180, 250, 0.5);
+    /* box-shadow: 0 2px 10px rgba(137, 180, 250, 0.15); */
+    letter-spacing: 0.8px;
+}
+
+#clock:hover {
+    background-color: rgba(28, 29, 53, 0.9);
+    color: #74c7ec;
+    /* box-shadow: 0 6px 20px rgba(137, 180, 250, 0.3); */
+}
+
+/* =============================================================================
+ *  GROUPS - Multimedia & Hardware with subtle dividers
+ * =============================================================================
+ */
+
+#group-hardware,
+#group-multimedia {
+    background-color: rgba(30, 30, 46, 0.9);
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin: 2px 6px;
+    border: 2px solid rgba(137, 180, 250, 0.15);
+    /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); */
+    font-size: 13px;
+}
+
+#group-hardware:hover,
+#group-multimedia:hover {
+    background-color: rgba(49, 50, 68, 0.9);
+    border-color: rgba(167, 190, 250, 0.25);
+}
+
+#group-hardware > * {
+    margin: 0 3px;
+    padding: 0 10px;
+    background-color: transparent;
+    border-right: 1px solid rgba(137, 180, 250, 0.1);
+    transition: all 0.2s ease;
+    font-size: 13px;
+}
+
+#group-hardware > *:last-child {
+    border-right: none;
+}
+
+#group-hardware > *:hover {
+    background-color: rgba(49, 50, 68, 0.9);
+    border-radius: 20px;
+}
+
+#group-multimedia > * {
+    margin: 0 3px;
+    padding: 0 10px;
+    background-color: transparent;
+    border-right: 1px solid rgba(250, 179, 135, 0.1);
+    transition: all 0.2s ease;
+    font-size: 13px;
+}
+
+#group-multimedia > *:last-child {
+    border-right: none;
+}
+
+#group-multimedia > *:hover {
+    background-color: rgba(49, 50, 68, 0.9);
+    border-radius: 20px;
+}
+
+/* =============================================================================
+ *  INDIVIDUAL MODULES - Color-coded by function
+ * =============================================================================
+ */
+
+/* CPU - Orange */
+#cpu {
+    color: #fab387;
+    padding: 8px;
+}
+
+#cpu:hover {
+    color: #ffc799;
+}
+
+/* Memory - Blue */
+#memory {
+    color: #89b4fa;
+    padding: 8px;
+}
+
+#memory:hover {
+    color: #a3c8fb;
+}
+
+/* Temperature - Pink/Red */
+#temperature {
+    color: #f5c2e7;
+    padding: 8px;
+}
+
+#temperature:hover {
+    color: #f8d4f0;
+    padding: 8px;
+}
+
+#temperature.critical {
+    background: linear-gradient(135deg, #f38ba8 0%, #eba0ac 100%);
+    color: #1e1e2e;
+    /* box-shadow: 0 0 16px rgba(243, 139, 168, 0.8); */
+    padding: 8px;
+}
+
+/* Battery - Green/Yellow */
+#battery {
+    color: #a6e3a1;
+    padding: 8px;
+}
+
+#battery:hover {
+    color: #b8f5ad;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: #94e2d5;
+}
+
+#battery.good {
+    color: #a6e3a1;
+}
+
+#battery.warning {
+    color: #f9e2af;
+    background-color: rgba(249, 226, 175, 0.1);
+    padding: 8px;
+}
+
+#battery.critical:not(.charging) {
+    background: linear-gradient(135deg, #f38ba8 0%, #eba0ac 100%);
+    color: #1e1e2e;
+    font-weight: bold;
+    /* box-shadow: 0 0 20px rgba(243, 139, 168, 0.8); */
+    padding: 8px;
+}
+
+/* Network - Cyan/Blue */
+#network {
+    color: #89dceb;
+    padding: 8px;
+}
+
+#network:hover {
+    color: #a3e6f5;
+    padding: 8px;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+    padding: 8px;
+}
+
+/* Pulseaudio - Peach */
+#pulseaudio {
+    color: #fab387;
+    padding: 8px;
+}
+
+#pulseaudio:hover {
+    color: #ffc799;
+    padding: 8px;
+}
+
+#pulseaudio.muted {
+    color: #f38ba8;
+}
+
+/* Idle Inhibitor - Lavender */
+#idle_inhibitor {
+    color: #b4befe;
+}
+
+#idle_inhibitor:hover {
+    color: #c8d0fe;
+}
+
+#idle_inhibitor.activated {
+    color: #a6e3a1;
+    background-color: rgba(166, 227, 161, 0.1);
+    border-radius: 20px;
+}
+
+/* =============================================================================
+ *  SYSTEM TRAY - Subtle integration
+ * =============================================================================
+ */
+
+#tray {
+    background-color: rgba(30, 30, 46, 0.9);
+    padding: 2px 14px;
+    margin: 2px 6px;
+}
+
+#tray:hover {
+    background-color: rgba(49, 50, 68, 0.9);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: rgba(243, 139, 168, 0.4);
+    border-radius: 20px;
+}
+
+/* =============================================================================
+ *  POWER BUTTON - Accent red with special styling
+ * =============================================================================
+ */
+
+#custom-power {
+    background: linear-gradient(135deg, #f38b8b 0%, #eba0ac 75%);
+    color: #1e1e2e;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 0px 16px; 
+    padding-left: 14px;
+    border: 2px solid rgb(255, 225, 225);
+    border-radius: 100%;
+    /* box-shadow: 0 2px 8px rgba(243, 139, 168, 0.3); */
+}
+
+#custom-power:hover {
+    background: linear-gradient(135deg, #eba0ac 0%, #f5c2e7 100%);
+    /* box-shadow: 0 4px 12px rgba(243, 139, 168, 0.5); */
+}
+
+/* =============================================================================
+ *  ACCESSIBILITY & UTILITY
+ * =============================================================================
+ */
+
+tooltip {
+    background-color: rgba(30, 30, 46, 0.9);
+    border: 2px solid rgba(137, 180, 250, 0.3);
+    border-radius: 20px;
+    color: #cdd6f4;
+    padding: 8px 12px;
+    margin-top: 5px;
+    /* box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); */
+}
+
+tooltip label {
+    color: #cdd6f4;
+    font-weight: 500;
+}
