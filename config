@@ -185,15 +185,7 @@
     "custom/power": {
         "format": "󰐥",
         "tooltip": true,
-        "tooltip-format": "Power Menu",
-        "on-click": "hyprlock",
-        "menu": "on-click",
-        "menu-file": "$HOME/.config/waybar/power_menu.xml",
-        "menu-actions": {
-            "shutdown": "shutdown",
-            "reboot": "reboot",
-            "suspend": "systemctl suspend",
-            "hibernate": "systemctl hibernate"
-        }
+        "tooltip-format": "Sleep &amp; Lock",
+        "on-click": "hyprlock & systemctl suspend"
     }
 }
