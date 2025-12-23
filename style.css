@@ -42,7 +42,7 @@ window#waybar.hidden {
 .modules-left > widget > *,
 .modules-center > widget > *,
 .modules-right > widget > * {
-    background-color: rgba(30, 30, 46, 0.9);
+    background-color: rgba(30, 30, 46, 0.75);
     color: #cdd6f4;
     border-radius: 20px;
     padding: 2px 14px;
@@ -53,13 +53,13 @@ window#waybar.hidden {
     font-size: 13px;
 }
 
-/* .modules-left > widget > *:hover,
+.modules-left > widget > *:hover,
 .modules-center > widget > *:hover,
 .modules-right > widget > *:hover {
     background-color: rgba(49, 50, 68, 0.9);
-    border-color: rgba(137, 180, 250, 0.4);
-    box-shadow: 0 6px 16px rgba(137, 180, 250, 0.2);
-} */
+    /* border-color: rgba(137, 180, 250, 0.4); */
+    /* box-shadow: 0 6px 16px rgba(137, 180, 250, 0.2); */
+}
 
 /* =============================================================================
  *  WORKSPACES - Enhanced with better visual feedback
@@ -67,13 +67,19 @@ window#waybar.hidden {
  */
 
 #workspaces {
-    background-color: rgba(30, 30, 46, 0.9);
+    background-color: rgba(30, 30, 46, 0.75);
     padding: 3px 8px;
     margin-top: 2px;
     margin-left: 0;
     border-radius: 20px;
     border: 2px solid rgba(137, 180, 250, 0.15);
     /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); */
+}
+
+#workspaces:hover {
+    background-color: rgba(49, 50, 68, 0.9);
+    /* border-color: rgba(137, 180, 250, 0.4); */
+    /* box-shadow: 0 6px 16px rgba(137, 180, 250, 0.2); */
 }
 
 #workspaces button {
@@ -113,7 +119,7 @@ window#waybar.hidden {
  */
 
 #window {
-    background-color: rgba(30, 30, 46, 0.9);
+    background-color: rgba(30, 30, 46, 0.75);
     color: #bac2de;
     font-weight: 500;
     font-size: 12px;
@@ -133,7 +139,7 @@ window#waybar.hidden {
  */
 
 #clock {
-    background: linear-gradient(135deg, rgba(30, 30, 46, 0.9) 0%, rgba(49, 50, 68, 0.9) 100%);
+    background: rgba(30, 30, 46, 0.75);
     color: #89b4fa;
     font-size: 13px;
     font-weight: 700;
@@ -145,7 +151,7 @@ window#waybar.hidden {
 }
 
 #clock:hover {
-    background-color: rgba(28, 29, 53, 0.9);
+    background-color: rgba(49, 50, 68, 0.9);
     color: #74c7ec;
     /* box-shadow: 0 6px 20px rgba(137, 180, 250, 0.3); */
 }
@@ -157,20 +163,21 @@ window#waybar.hidden {
 
 #group-hardware,
 #group-multimedia {
-    background-color: rgba(30, 30, 46, 0.9);
+    background-color: rgba(30, 30, 46, 0.75);
     padding: 2px 10px;
     border-radius: 20px;
     margin: 2px 6px;
     border: 2px solid rgba(137, 180, 250, 0.15);
     /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); */
     font-size: 13px;
+    letter-spacing: 0.8px;
 }
 
-#group-hardware:hover,
+/* #group-hardware:hover,
 #group-multimedia:hover {
     background-color: rgba(49, 50, 68, 0.9);
     border-color: rgba(167, 190, 250, 0.25);
-}
+} */
 
 #group-hardware > * {
     margin: 0 3px;
@@ -336,7 +343,7 @@ window#waybar.hidden {
  */
 
 #tray {
-    background-color: rgba(30, 30, 46, 0.9);
+    background-color: rgba(30, 30, 46, 0.75);
     padding: 2px 14px;
     margin: 2px 6px;
 }
@@ -361,19 +368,19 @@ window#waybar.hidden {
  */
 
 #custom-power {
-    background: linear-gradient(135deg, #f38b8b 0%, #eba0ac 75%);
-    color: #1e1e2e;
+    background: rgba(30, 30, 46, 0.75);
+    color: #89b4fa;
     font-size: 18px;
     font-weight: bold;
     padding: 0px 16px; 
     padding-left: 14px;
-    border: 2px solid rgb(255, 225, 225);
+    border: 2px solid rgba(167, 190, 250, 0.25);
     border-radius: 100%;
     /* box-shadow: 0 2px 8px rgba(243, 139, 168, 0.3); */
 }
 
 #custom-power:hover {
-    background: linear-gradient(135deg, #eba0ac 0%, #f5c2e7 100%);
+    background: rgba(167, 190, 250, 0.25);
     /* box-shadow: 0 4px 12px rgba(243, 139, 168, 0.5); */
 }
 
@@ -383,7 +390,7 @@ window#waybar.hidden {
  */
 
 tooltip {
-    background-color: rgba(30, 30, 46, 0.9);
+    background-color: rgba(30, 30, 46, 0.75);
     border: 2px solid rgba(137, 180, 250, 0.3);
     border-radius: 20px;
     color: #cdd6f4;
