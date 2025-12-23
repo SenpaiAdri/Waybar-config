@@ -185,7 +185,7 @@
     "custom/power": {
         "format": "󰐥",
         "tooltip": true,
-        "tooltip-format": "Sleep &amp; Lock",
-        "on-click": "hyprlock & systemctl suspend"
+        "tooltip-format": "Power menu",
+        "on-click": "~/.config/waybar/scripts/power-menu.sh"
     }
 }
