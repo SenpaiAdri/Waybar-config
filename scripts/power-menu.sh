@@ -2,15 +2,15 @@
 set -euo pipefail
 
 choose_menu() {
-  if command -v wofi >/dev/null 2>&1; then
-    # Wayland-first
-    echo "wofi --dmenu --prompt Power --width 260 --lines 4"
+  if command -v rofi >/dev/null 2>&1; then
+    # rofi-wayland or rofi under Xwayland
+    echo "rofi -dmenu -theme ${HOME}/.config/rofi/powermenu.rasi -p Power"
     return 0
   fi
 
-  if command -v rofi >/dev/null 2>&1; then
-    # rofi-wayland or rofi under Xwayland
-    echo "rofi -dmenu -p Power"
+  if command -v wofi >/dev/null 2>&1; then
+    # Wayland-first
+    echo "wofi --dmenu --prompt Power --width 260 --lines 4"
     return 0
   fi
 
@@ -32,14 +32,14 @@ fi
 
 selection="$(
   printf '%s\n' \
-    "Sleep" \
-    "Restart" \
-    "Shutdown" \
+    "  Sleep" \
+    "  Restart" \
+    "  Shutdown" \
   | eval "${MENU_CMD}"
 )"
 
 case "${selection}" in
-  Sleep)
+  *"Sleep")
     if command -v hyprlock >/dev/null 2>&1; then
       hyprlock &
       sleep 0.2
@@ -49,10 +49,10 @@ case "${selection}" in
     fi
     systemctl suspend
     ;;
-  Restart)
+  *"Restart")
     systemctl reboot
     ;;
-  Shutdown)
+  *"Shutdown")
     systemctl poweroff
     ;;
   *)
