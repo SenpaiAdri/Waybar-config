@@ -373,10 +373,10 @@ window#waybar.hidden {
 #custom-power {
     background: rgba(30, 30, 46, 0.75);
     color: #89b4fa;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
-    padding: 0px 14px; 
-    padding-left: 12px;
+    padding: 0px 12px; 
+    padding-left: 11px;
     border: 2px solid rgba(167, 190, 250, 0.25);
     border-radius: 100%;
     /* box-shadow: 0 2px 8px rgba(243, 139, 168, 0.3); */
