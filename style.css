@@ -39,9 +39,9 @@ window#waybar.hidden {
     background-color: transparent;
 }
 
-.modules-left > widget > *,
-.modules-center > widget > *,
-.modules-right > widget > * {
+.modules-left>widget>*,
+.modules-center>widget>*,
+.modules-right>widget>* {
     background-color: rgba(30, 30, 46, 0.75);
     color: #cdd6f4;
     border-radius: 20px;
@@ -53,9 +53,9 @@ window#waybar.hidden {
     font-size: 13px;
 }
 
-.modules-left > widget > *:hover,
-.modules-center > widget > *:hover,
-.modules-right > widget > *:hover {
+.modules-left>widget>*:hover,
+.modules-center>widget>*:hover,
+.modules-right>widget>*:hover {
     background-color: rgba(49, 50, 68, 0.9);
     /* border-color: rgba(137, 180, 250, 0.4); */
     /* box-shadow: 0 6px 16px rgba(137, 180, 250, 0.2); */
@@ -179,7 +179,7 @@ window#waybar.hidden {
     border-color: rgba(167, 190, 250, 0.25);
 } */
 
-#group-hardware > * {
+#group-hardware>* {
     margin: 0 3px;
     padding: 0 10px;
     background-color: transparent;
@@ -188,16 +188,16 @@ window#waybar.hidden {
     font-size: 13px;
 }
 
-#group-hardware > *:last-child {
+#group-hardware>*:last-child {
     border-right: none;
 }
 
-#group-hardware > *:hover {
+#group-hardware>*:hover {
     background-color: rgba(49, 50, 68, 0.9);
     border-radius: 20px;
 }
 
-#group-multimedia > * {
+#group-multimedia>* {
     margin: 0 3px;
     padding: 0 10px;
     background-color: transparent;
@@ -206,11 +206,11 @@ window#waybar.hidden {
     font-size: 13px;
 }
 
-#group-multimedia > *:last-child {
+#group-multimedia>*:last-child {
     border-right: none;
 }
 
-#group-multimedia > *:hover {
+#group-multimedia>*:hover {
     background-color: rgba(49, 50, 68, 0.9);
     border-radius: 20px;
 }
@@ -340,6 +340,18 @@ window#waybar.hidden {
     border-radius: 20px;
 }
 
+/* Notification - Lavender */
+#custom-notification {
+    color: #cba6f7;
+    padding: 0px 11px;
+    padding-left: 11px;
+    font-size: 15px;
+}
+
+#custom-notification:hover {
+    color: #decaff;
+}
+
 /* =============================================================================
  *  SYSTEM TRAY - Subtle integration
  * =============================================================================
@@ -355,11 +367,11 @@ window#waybar.hidden {
     background-color: rgba(49, 50, 68, 0.9);
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: rgba(243, 139, 168, 0.4);
     border-radius: 20px;
@@ -375,7 +387,7 @@ window#waybar.hidden {
     color: #89b4fa;
     font-size: 15px;
     font-weight: bold;
-    padding: 0px 12px; 
+    padding: 0px 12px;
     padding-left: 11px;
     border: 2px solid rgba(167, 190, 250, 0.25);
     border-radius: 100%;
