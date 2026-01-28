@@ -19,6 +19,7 @@
     ],
     // --- MODULES RIGHT ---
     "modules-right": [
+        "custom/profile",
         "group/multimedia",
         "group/hardware",
         "tray",
@@ -86,7 +87,7 @@
     },
     "clock": {
         "format": "{:%I:%M %p   %a  %d  %b}",
-        "format-alt": "{:%Y-%m-%d   %H:%M:%S}",
+        // "format-alt": "{:%Y-%m-%d   %H:%M:%S}",
         "tooltip-format": "<tt><big>{calendar}</big></tt>",
         "calendar": {
             "mode": "month",
@@ -211,5 +212,13 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
+    },
+    "custom/profile": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/power-profile.sh",
+        "return-type": "json",
+        "interval": 10,
+        "on-click": "~/.config/waybar/scripts/power-profile.sh next && pkill -SIGRTMIN+8 waybar",
+        "signal": 8
     }
 }
