@@ -156,12 +156,13 @@
     },
     "network": {
         "interval": 5,
-        "format-wifi": "󰖨  {signalStrength}%",
-        "format-ethernet": "󰈀  USB tethering",
-        "format-linked": "󰈀  {ifname}",
-        "format-disconnected": "󰖪 Offline",
-        "format-alt": "󰈀  {bandwidthDownBits}    󰈀  {bandwidthUpBits}",
-        "tooltip-format": "Strength:\t{signalStrength}%\n󰁅{bandwidthDownBits}\t󰁝 {bandwidthUpBits}"
+        "format-wifi": "󰖨  {essid}",
+        "format-ethernet": "󰈀  Ethernet",
+        "format-linked": "󰈀  {ifname} (No IP)",
+        "format-disconnected": "󰖪 Disconnected",
+        // "format-alt": "󰈀  {bandwidthDownBits}    󰈀  {bandwidthUpBits}",
+        "tooltip-format": "Network: {essid}\nSignal Strength: {signalStrength}%",
+        "on-click": "~/.config/waybar/scripts/wifi-menu.sh"
     },
     "pulseaudio": {
         "format": "{icon}  {volume}%",
