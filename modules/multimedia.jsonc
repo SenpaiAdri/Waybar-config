@@ -35,7 +35,7 @@
     },
     "network": {
         "interval": 5,
-        "format-wifi": "󰖨",
+        "format-wifi": "",
         "format-ethernet": "󰈀",
         "format-linked": "󰈀",
         "format-disconnected": "󰖪",
