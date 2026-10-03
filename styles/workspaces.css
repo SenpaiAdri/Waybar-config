@@ -1,42 +1,69 @@
-/* Workspaces */
+/* Workspaces — CSS-drawn dots, no text, no container bg. Active is an elongated dash. */
 #workspaces {
-    background-color: alpha(@surface, 0.75);
-    padding: 3px 8px;
-    margin-top: 2px;
-    margin-left: 0;
-    border-radius: 20px;
-    border: 2px solid alpha(@primary, 0.15);
-}
-
-#workspaces:hover {
-    background-color: alpha(@surface_variant, 0.92);
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0 4px;
+    margin: 0;
 }
 
 #workspaces button {
-    padding: 0px 6px;
-    margin: 0 2px;
-    background-color: transparent;
-    color: @outline;
-    border-radius: 20px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border: none;
-    font-size: 50px;
-    font-weight: bold;
+    color: transparent;
+    background-color: alpha(@on_surface, 0.55);
     background-image: none;
     box-shadow: none;
+    border: none;
+    border-radius: 999px;
+    min-width: 8px;
+    padding: 0;
+    /* Vertical margins inset the shape so it paints as a dot, not a full-height bar */
+    margin: 11px 5px;
+    transition: all 0.2s ease;
+}
+
+/* Kill the inner label entirely — dots come from the button shape, not text */
+#workspaces button label {
+    font-size: 1px;
+    color: transparent;
+    margin: 0;
+    padding: 0;
+    min-width: 0;
+    min-height: 0;
 }
 
 #workspaces button:hover {
-    background-color: transparent;
+    background-color: alpha(@on_surface, 0.85);
     background-image: none;
     box-shadow: none;
-    color: @primary;
-}
-
-#workspaces button.active {
-    color: @primary;
+    border: none;
+    color: transparent;
 }
 
 #workspaces button.urgent {
-    color: @error;
+    background-color: @error;
+    background-image: none;
+    border: none;
+    color: transparent;
+}
+
+/* Inactive + empty: dimmest */
+#workspaces button.empty {
+    background-color: alpha(@on_surface, 0.32);
+    opacity: 1;
+}
+
+/* Active LAST so it always wins — incl. active-but-empty workspaces.
+   Current workspace: solid white dash. */
+#workspaces button.active,
+#workspaces button.active.empty {
+    background-color: @on_surface;
+    background-image: none;
+    box-shadow: none;
+    border: none;
+    color: transparent;
+    opacity: 1;
+    min-width: 30px;
+    padding: 0;
+    margin: 11px 5px;
 }

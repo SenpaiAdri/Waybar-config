@@ -1,16 +1,20 @@
-/* Clock — accent with primary */
+/* Clock — centered, plain menu-bar text, no pill */
 #clock {
-    background: alpha(@surface, 0.75);
-    color: @primary;
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: @on_surface;
     font-size: 13px;
-    font-weight: 700;
-    padding: 2px 16px;
-    margin: 2px 0;
-    border: 2px solid alpha(@primary, 0.50);
-    letter-spacing: 0.8px;
+    font-weight: 600;
+    padding: 0 8px;
+    margin: 0;
+    letter-spacing: 0.3px;
 }
 
 #clock:hover {
-    background-color: alpha(@surface_variant, 0.92);
-    color: @primary;
+    background-color: transparent;
+    background: transparent;
+    color: @on_surface;
+    opacity: 0.8;
 }

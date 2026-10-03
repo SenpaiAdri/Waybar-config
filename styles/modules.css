@@ -1,136 +1,136 @@
-/* Individual modules — cpu/memory/temperature/battery/network/pulseaudio/idle/notification */
+/* Individual modules — icons only, uniform menu-bar look, no pills */
 
-/* CPU - warm -> tertiary */
-#cpu {
-    color: @tertiary;
-    padding: 0px 8px;
-    font-size: 15px;
+/* Performance profile */
+#custom-profile {
+    color: @on_surface;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    padding: 0 8px;
 }
 
-#cpu:hover {
-    color: @primary;
+#custom-profile:hover {
+    opacity: 0.7;
 }
 
-/* Memory - primary */
-#memory {
-    color: @primary;
-    padding: 0px 8px;
+/* Sound */
+#pulseaudio {
+    color: @on_surface;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    padding: 0 8px;
 }
 
-#memory:hover {
-    color: alpha(@primary, 0.85);
+#pulseaudio:hover {
+    opacity: 0.7;
 }
 
-/* Temperature - error/tertiary */
-#temperature {
-    color: @tertiary;
-    padding: 0px 8px;
-    border-radius: 20px;
+#pulseaudio.muted {
+    color: alpha(@on_surface, 0.45);
 }
 
-#temperature:hover {
-    color: alpha(@tertiary, 0.90);
-    padding: 0px 8px;
-}
-
-#temperature.critical {
-    background: @error;
-    color: @surface;
-    border-radius: 20px;
-    padding: 0px 8px;
-}
-
-/* Battery */
-#battery {
-    color: @primary;
-    padding: 0px 8px;
-}
-
-#battery:hover {
-    color: alpha(@primary, 0.90);
-    padding: 0px 8px;
-}
-
-#battery.charging,
-#battery.plugged {
-    color: @tertiary;
-    padding: 0px 8px;
-}
-
-#battery.good {
-    color: @primary;
-    padding: 0px 8px;
-}
-
-#battery.warning {
-    color: @tertiary;
-    padding: 0px 8px;
-}
-
-#battery.critical:not(.charging) {
-    background: @error;
-    border-radius: 20px;
-    color: @surface;
-    font-weight: bold;
-    padding: 0px 8px;
-}
-
-/* Network - primary/secondary */
+/* Wifi */
 #network {
-    color: @secondary;
-    padding: 0px 8px;
+    color: @on_surface;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    padding: 0 8px;
 }
 
 #network:hover {
-    color: @primary;
-    padding: 0px 8px;
+    opacity: 0.7;
 }
 
 #network.disconnected {
     color: @error;
-    padding: 0px 8px;
 }
 
-/* Pulseaudio - secondary warm */
-#pulseaudio {
-    color: @secondary;
-    padding: 0px 8px;
+/* Battery — compact outline with the number inside, ~icon-sized */
+#battery {
+    color: @on_surface;
+    background-color: transparent;
+    background: transparent;
+    border: 1px solid alpha(@on_surface, 0.85);
+    border-radius: 6px;
+    font-size: 8px;
+    font-weight: 700;
+    min-width: 24px;
+    padding: 0 4px;
+    /* Inset vertically so the box doesn't span the full bar height */
+    margin: 6px 6px;
 }
 
-#pulseaudio:hover {
-    color: @primary;
-    padding: 0px 8px;
+#battery:hover {
+    opacity: 0.8;
 }
 
-#pulseaudio.muted {
+#battery.charging,
+#battery.plugged {
+    color: @on_surface;
+    background-color: alpha(@on_surface, 0.14);
+    border-color: @on_surface;
+}
+
+#battery.warning {
+    color: @tertiary;
+    border-color: @tertiary;
+}
+
+#battery.critical:not(.charging) {
+    background: transparent;
+    background-color: transparent;
+    border: 1px solid @error;
+    border-radius: 6px;
     color: @error;
+    font-weight: bold;
+    font-size: 8px;
+    min-width: 24px;
+    padding: 0 4px;
+    margin: 6px 6px;
 }
 
-/* Bluetooth inherits network/secondary tones (no extra rules needed) */
+/* Unused hardware sensors kept neutral if re-enabled later */
+#cpu,
+#memory,
+#temperature {
+    color: @on_surface;
+    background: transparent;
+    border: none;
+    padding: 0 8px;
+}
 
-/* Idle Inhibitor - secondary lavendar */
+#temperature.critical {
+    background: transparent;
+    color: @error;
+    border: none;
+    font-weight: bold;
+}
+
+/* Unused multimedia extras kept neutral */
+#bluetooth,
 #idle_inhibitor {
-    color: @secondary;
-}
-
-#idle_inhibitor:hover {
-    color: @primary;
+    color: @on_surface;
+    background: transparent;
+    border: none;
 }
 
 #idle_inhibitor.activated {
-    color: @tertiary;
-    background-color: alpha(@tertiary, 0.14);
-    border-radius: 20px;
+    color: @on_surface;
+    background-color: alpha(@on_surface, 0.18);
+    border-radius: 6px;
 }
 
-/* Notification - primary soft */
+/* Notification bell */
 #custom-notification {
-    color: @primary;
-    padding: 0px 11px;
-    padding-left: 11px;
-    font-size: 15px;
+    color: @on_surface;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    padding: 0 6px 0 8px;
 }
 
 #custom-notification:hover {
-    color: alpha(@primary, 0.85);
+    opacity: 0.7;
 }

@@ -1,13 +1,16 @@
-/* Window title */
+/* Window title — unused in menu-bar layout, kept transparent */
 #window {
-    background-color: alpha(@surface, 0.75);
-    color: alpha(@on_surface, 0.78);
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: alpha(@on_surface, 0.7);
     font-weight: 500;
     font-size: 12px;
-    padding: 2px 16px;
+    padding: 0 8px;
 }
 
 #window:hover {
-    background-color: alpha(@surface_variant, 0.92);
+    background-color: transparent;
     color: @on_surface;
 }

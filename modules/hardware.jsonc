@@ -40,11 +40,11 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{icon} {capacity}%",
-        "format-full": "{icon} {capacity}%",
-        "format-charging": "󰂄 {capacity}%",
-        "format-plugged": "󰚥 {capacity}%",
-        "format-alt": "{icon} {time}",
+        "format": "{capacity}",
+        "format-full": "{capacity}",
+        "format-charging": "󰂄 {capacity}",
+        "format-plugged": "󰚥 {capacity}",
+        "format-alt": "{icon} {capacity}%",
         "format-icons": [
             "󰂎",
             "󰁺",
@@ -58,6 +58,6 @@
             "󰂂",
             "󰁹"
         ],
-        "tooltip-format": "{timeTo}\nPower: {power}W"
+        "tooltip-format": "Battery: {capacity}%\n{timeTo}\nPower: {power}W"
     }
 }

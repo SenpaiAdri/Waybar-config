@@ -10,11 +10,11 @@
         ]
     },
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "󰂯  {volume}%",
-        "format-bluetooth-muted": "󰂲  Muted",
-        "format-muted": "󰖁  Muted",
-        "format-source": "󰍬  {volume}%",
+        "format": "{icon}",
+        "format-bluetooth": "󰂯",
+        "format-bluetooth-muted": "󰂲",
+        "format-muted": "󰖁",
+        "format-source": "󰍬",
         "format-source-muted": "󰍭",
         "format-icons": {
             "headphone": "󰋋",
@@ -35,10 +35,10 @@
     },
     "network": {
         "interval": 5,
-        "format-wifi": "󰖨  {essid}",
-        "format-ethernet": "󰈀  Ethernet",
-        "format-linked": "󰈀  {ifname} (No IP)",
-        "format-disconnected": "󰖪 Disconnected",
+        "format-wifi": "󰖨",
+        "format-ethernet": "󰈀",
+        "format-linked": "󰈀",
+        "format-disconnected": "󰖪",
         // "format-alt": "󰈀  {bandwidthDownBits}    󰈀  {bandwidthUpBits}",
         "tooltip-format": "Network: {essid}\nSignal Strength: {signalStrength}%",
         "on-click": "~/.config/waybar/scripts/wifi-menu.sh"

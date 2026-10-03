@@ -12,16 +12,15 @@
     ],
     "layer": "top",
     "position": "top",
-    "height": 40,
-    "spacing": 10,
-    "margin-top": 4,
+    "height": 28,
+    "spacing": 4,
+    "margin-top": 0,
     "margin-bottom": 0,
-    "margin-left": 10,
-    "margin-right": 10,
+    "margin-left": 8,
+    "margin-right": 8,
     // --- MODULES LEFT ---
     "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
+        "hyprland/workspaces"
     ],
     // --- MODULES CENTER ---
     "modules-center": [
@@ -30,10 +29,9 @@
     // --- MODULES RIGHT ---
     "modules-right": [
         "custom/profile",
-        "group/multimedia",
-        "group/hardware",
-        "tray",
-        "custom/notification",
-        "custom/power"
+        "pulseaudio",
+        "network",
+        "battery",
+        "custom/notification"
     ]
 }

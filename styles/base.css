@@ -1,4 +1,4 @@
-/* Base styles & typography + module base */
+/* Base styles & typography — macOS menu bar: transparent, no pills, no borders */
 * {
     font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Symbols Nerd Font", sans-serif;
     font-size: 13px;
@@ -8,8 +8,10 @@
 
 window#waybar {
     background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
     color: @on_surface;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 window#waybar.hidden {
@@ -20,24 +22,31 @@ window#waybar.hidden {
 .modules-center,
 .modules-right {
     background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
-.modules-left>widget>*,
-.modules-center>widget>*,
-.modules-right>widget>* {
-    background-color: alpha(@surface, 0.75);
-    color: @on_surface;
-    border-radius: 20px;
-    padding: 2px 14px;
-    margin: 2px 4px;
-    border: 2px solid alpha(@primary, 0.15);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+/* Strip the old pill container — every module is bare text/icon */
+.modules-left > widget > *,
+.modules-center > widget > *,
+.modules-right > widget > * {
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0 6px;
+    margin: 0;
+    transition: opacity 0.2s ease;
     font-size: 13px;
 }
 
-.modules-left>widget>*:hover,
-.modules-center>widget>*:hover,
-.modules-right>widget>*:hover {
-    background-color: alpha(@surface_variant, 0.92);
+.modules-left > widget > *:hover,
+.modules-center > widget > *:hover,
+.modules-right > widget > *:hover {
+    background-color: transparent;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
