@@ -47,6 +47,20 @@
     color: @error;
 }
 
+/* Battery charging bolt — deliberately OUTSIDE the battery box, no border */
+#custom-battery-bolt {
+    color: @bar_fg;
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    padding: 1px 0 0 2px;
+    margin-right: -2px;
+}
+
+#custom-battery-bolt:hover {
+    opacity: 0.7;
+}
+
 /* Battery — compact outline with the number inside, ~icon-sized */
 #battery {
     color: @bar_fg;
@@ -54,12 +68,12 @@
     background: transparent;
     border: 1px solid alpha(@bar_fg, 0.85);
     border-radius: 6px;
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 700;
     min-width: 24px;
     padding: 0 4px;
     /* Inset vertically so the box doesn't span the full bar height */
-    margin: 6px 6px;
+    margin: 6px 6px 6px 1px;
 }
 
 #battery:hover {
@@ -85,10 +99,10 @@
     border-radius: 6px;
     color: @error;
     font-weight: bold;
-    font-size: 8px;
+    font-size: 9px;
     min-width: 24px;
     padding: 0 4px;
-    margin: 6px 6px;
+    margin: 6px 6px 6px 1px;
 }
 
 /* Unused hardware sensors kept neutral if re-enabled later */

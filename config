@@ -31,6 +31,7 @@
         "custom/profile",
         "pulseaudio",
         "network",
+        "custom/battery-bolt",
         "battery",
         "custom/notification"
     ]
