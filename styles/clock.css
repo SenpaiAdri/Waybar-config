@@ -4,7 +4,7 @@
     background: transparent;
     border: none;
     box-shadow: none;
-    color: @on_surface;
+    color: @bar_fg;
     font-size: 13px;
     font-weight: 600;
     padding: 0 8px;
@@ -15,6 +15,6 @@
 #clock:hover {
     background-color: transparent;
     background: transparent;
-    color: @on_surface;
+    color: @bar_fg;
     opacity: 0.8;
 }
