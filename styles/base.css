@@ -1,6 +1,6 @@
 /* Base styles & typography — macOS menu bar: transparent, no pills, no borders */
 * {
-    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Symbols Nerd Font", sans-serif;
+    font-family: "Poppins", "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Symbols Nerd Font", sans-serif;
     font-size: 13px;
     font-weight: 500;
     min-height: 0;
