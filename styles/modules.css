@@ -1,0 +1,136 @@
+/* Individual modules — cpu/memory/temperature/battery/network/pulseaudio/idle/notification */
+
+/* CPU - warm -> tertiary */
+#cpu {
+    color: @tertiary;
+    padding: 0px 8px;
+    font-size: 15px;
+}
+
+#cpu:hover {
+    color: @primary;
+}
+
+/* Memory - primary */
+#memory {
+    color: @primary;
+    padding: 0px 8px;
+}
+
+#memory:hover {
+    color: alpha(@primary, 0.85);
+}
+
+/* Temperature - error/tertiary */
+#temperature {
+    color: @tertiary;
+    padding: 0px 8px;
+    border-radius: 20px;
+}
+
+#temperature:hover {
+    color: alpha(@tertiary, 0.90);
+    padding: 0px 8px;
+}
+
+#temperature.critical {
+    background: @error;
+    color: @surface;
+    border-radius: 20px;
+    padding: 0px 8px;
+}
+
+/* Battery */
+#battery {
+    color: @primary;
+    padding: 0px 8px;
+}
+
+#battery:hover {
+    color: alpha(@primary, 0.90);
+    padding: 0px 8px;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @tertiary;
+    padding: 0px 8px;
+}
+
+#battery.good {
+    color: @primary;
+    padding: 0px 8px;
+}
+
+#battery.warning {
+    color: @tertiary;
+    padding: 0px 8px;
+}
+
+#battery.critical:not(.charging) {
+    background: @error;
+    border-radius: 20px;
+    color: @surface;
+    font-weight: bold;
+    padding: 0px 8px;
+}
+
+/* Network - primary/secondary */
+#network {
+    color: @secondary;
+    padding: 0px 8px;
+}
+
+#network:hover {
+    color: @primary;
+    padding: 0px 8px;
+}
+
+#network.disconnected {
+    color: @error;
+    padding: 0px 8px;
+}
+
+/* Pulseaudio - secondary warm */
+#pulseaudio {
+    color: @secondary;
+    padding: 0px 8px;
+}
+
+#pulseaudio:hover {
+    color: @primary;
+    padding: 0px 8px;
+}
+
+#pulseaudio.muted {
+    color: @error;
+}
+
+/* Bluetooth inherits network/secondary tones (no extra rules needed) */
+
+/* Idle Inhibitor - secondary lavendar */
+#idle_inhibitor {
+    color: @secondary;
+}
+
+#idle_inhibitor:hover {
+    color: @primary;
+}
+
+#idle_inhibitor.activated {
+    color: @tertiary;
+    background-color: alpha(@tertiary, 0.14);
+    border-radius: 20px;
+}
+
+/* Notification - primary soft */
+#custom-notification {
+    color: @primary;
+    padding: 0px 11px;
+    padding-left: 11px;
+    font-size: 15px;
+}
+
+#custom-notification:hover {
+    color: alpha(@primary, 0.85);
+}

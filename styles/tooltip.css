@@ -1,0 +1,14 @@
+/* Tooltip */
+tooltip {
+    background-color: alpha(@surface, 0.85);
+    border: 2px solid alpha(@primary, 0.30);
+    border-radius: 20px;
+    color: @on_surface;
+    padding: 8px 12px;
+    margin-top: 5px;
+}
+
+tooltip label {
+    color: @on_surface;
+    font-weight: 500;
+}

@@ -1,0 +1,13 @@
+/* Window title */
+#window {
+    background-color: alpha(@surface, 0.75);
+    color: alpha(@on_surface, 0.78);
+    font-weight: 500;
+    font-size: 12px;
+    padding: 2px 16px;
+}
+
+#window:hover {
+    background-color: alpha(@surface_variant, 0.92);
+    color: @on_surface;
+}

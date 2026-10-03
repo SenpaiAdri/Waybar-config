@@ -1,0 +1,47 @@
+/* Groups — Multimedia & Hardware */
+#group-hardware,
+#group-multimedia {
+    background-color: alpha(@surface, 0.75);
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin: 2px 6px;
+    border: 2px solid alpha(@primary, 0.15);
+    font-size: 13px;
+    letter-spacing: 0.8px;
+}
+
+#group-hardware>* {
+    margin: 0 3px;
+    padding: 0 10px;
+    background-color: transparent;
+    border-right: 1px solid alpha(@primary, 0.10);
+    transition: all 0.2s ease;
+    font-size: 13px;
+}
+
+#group-hardware>*:last-child {
+    border-right: none;
+}
+
+#group-hardware>*:hover {
+    background-color: alpha(@surface_variant, 0.92);
+    border-radius: 20px;
+}
+
+#group-multimedia>* {
+    margin: 0 3px;
+    padding: 0 10px;
+    background-color: transparent;
+    border-right: 1px solid alpha(@tertiary, 0.10);
+    transition: all 0.2s ease;
+    font-size: 13px;
+}
+
+#group-multimedia>*:last-child {
+    border-right: none;
+}
+
+#group-multimedia>*:hover {
+    background-color: alpha(@surface_variant, 0.92);
+    border-radius: 20px;
+}

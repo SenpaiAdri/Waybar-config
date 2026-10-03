@@ -1,0 +1,403 @@
+/* 
+ * =============================================================================
+ *  MODERN WAYBAR THEME — DYNAMIC (matugen/theme-generator)
+ * =============================================================================
+ *  Dynamic palette via @import "colors.css" — surface/primary adapt to wallpaper
+ */
+
+@import "colors.css";
+
+/* =============================================================================
+ *  BASE STYLES & TYPOGRAPHY
+ * =============================================================================
+ */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Symbols Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @on_surface;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+window#waybar.hidden {
+    opacity: 0;
+}
+
+/* =============================================================================
+ *  MODULE BASE STYLES — uses dynamic surface + primary border
+ * =============================================================================
+ */
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: transparent;
+}
+
+.modules-left>widget>*,
+.modules-center>widget>*,
+.modules-right>widget>* {
+    background-color: alpha(@surface, 0.75);
+    color: @on_surface;
+    border-radius: 20px;
+    padding: 2px 14px;
+    margin: 2px 4px;
+    border: 2px solid alpha(@primary, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 13px;
+}
+
+.modules-left>widget>*:hover,
+.modules-center>widget>*:hover,
+.modules-right>widget>*:hover {
+    background-color: alpha(@surface_variant, 0.92);
+}
+
+/* =============================================================================
+ *  WORKSPACES
+ * =============================================================================
+ */
+
+#workspaces {
+    background-color: alpha(@surface, 0.75);
+    padding: 3px 8px;
+    margin-top: 2px;
+    margin-left: 0;
+    border-radius: 20px;
+    border: 2px solid alpha(@primary, 0.15);
+}
+
+#workspaces:hover {
+    background-color: alpha(@surface_variant, 0.92);
+}
+
+#workspaces button {
+    padding: 0px 6px;
+    margin: 0 2px;
+    background-color: transparent;
+    color: @outline;
+    border-radius: 20px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    font-size: 50px;
+    font-weight: bold;
+    background-image: none;
+    box-shadow: none;
+}
+
+#workspaces button:hover {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    color: @primary;
+}
+
+#workspaces button.active {
+    color: @primary;
+}
+
+#workspaces button.urgent {
+    color: @error;
+}
+
+/* =============================================================================
+ *  WINDOW TITLE
+ * =============================================================================
+ */
+
+#window {
+    background-color: alpha(@surface, 0.75);
+    color: alpha(@on_surface, 0.78);
+    font-weight: 500;
+    font-size: 12px;
+    padding: 2px 16px;
+}
+
+#window:hover {
+    background-color: alpha(@surface_variant, 0.92);
+    color: @on_surface;
+}
+
+/* =============================================================================
+ *  CLOCK — accent with primary
+ * =============================================================================
+ */
+
+#clock {
+    background: alpha(@surface, 0.75);
+    color: @primary;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 2px 16px;
+    margin: 2px 0;
+    border: 2px solid alpha(@primary, 0.50);
+    letter-spacing: 0.8px;
+}
+
+#clock:hover {
+    background-color: alpha(@surface_variant, 0.92);
+    color: @primary;
+}
+
+/* =============================================================================
+ *  GROUPS — Multimedia & Hardware
+ * =============================================================================
+ */
+
+#group-hardware,
+#group-multimedia {
+    background-color: alpha(@surface, 0.75);
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin: 2px 6px;
+    border: 2px solid alpha(@primary, 0.15);
+    font-size: 13px;
+    letter-spacing: 0.8px;
+}
+
+#group-hardware>* {
+    margin: 0 3px;
+    padding: 0 10px;
+    background-color: transparent;
+    border-right: 1px solid alpha(@primary, 0.10);
+    transition: all 0.2s ease;
+    font-size: 13px;
+}
+
+#group-hardware>*:last-child {
+    border-right: none;
+}
+
+#group-hardware>*:hover {
+    background-color: alpha(@surface_variant, 0.92);
+    border-radius: 20px;
+}
+
+#group-multimedia>* {
+    margin: 0 3px;
+    padding: 0 10px;
+    background-color: transparent;
+    border-right: 1px solid alpha(@tertiary, 0.10);
+    transition: all 0.2s ease;
+    font-size: 13px;
+}
+
+#group-multimedia>*:last-child {
+    border-right: none;
+}
+
+#group-multimedia>*:hover {
+    background-color: alpha(@surface_variant, 0.92);
+    border-radius: 20px;
+}
+
+/* =============================================================================
+ *  INDIVIDUAL MODULES — accent colors now derived from dynamic palette
+ *  (fallback to catppuccin-like hues tinted via primary/secondary/tertiary)
+ * =============================================================================
+ */
+
+/* CPU - warm -> tertiary */
+#cpu {
+    color: @tertiary;
+    padding: 0px 8px;
+    font-size: 15px;
+}
+
+#cpu:hover {
+    color: @primary;
+}
+
+/* Memory - primary */
+#memory {
+    color: @primary;
+    padding: 0px 8px;
+}
+
+#memory:hover {
+    color: alpha(@primary, 0.85);
+}
+
+/* Temperature - error/tertiary */
+#temperature {
+    color: @tertiary;
+    padding: 0px 8px;
+    border-radius: 20px;
+}
+
+#temperature:hover {
+    color: alpha(@tertiary, 0.90);
+    padding: 0px 8px;
+}
+
+#temperature.critical {
+    background: @error;
+    color: @surface;
+    border-radius: 20px;
+    padding: 0px 8px;
+}
+
+/* Battery */
+#battery {
+    color: @primary;
+    padding: 0px 8px;
+}
+
+#battery:hover {
+    color: alpha(@primary, 0.90);
+    padding: 0px 8px;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @tertiary;
+    padding: 0px 8px;
+}
+
+#battery.good {
+    color: @primary;
+    padding: 0px 8px;
+}
+
+#battery.warning {
+    color: @tertiary;
+    padding: 0px 8px;
+}
+
+#battery.critical:not(.charging) {
+    background: @error;
+    border-radius: 20px;
+    color: @surface;
+    font-weight: bold;
+    padding: 0px 8px;
+}
+
+/* Network - primary/secondary */
+#network {
+    color: @secondary;
+    padding: 0px 8px;
+}
+
+#network:hover {
+    color: @primary;
+    padding: 0px 8px;
+}
+
+#network.disconnected {
+    color: @error;
+    padding: 0px 8px;
+
+}
+
+/* Pulseaudio - secondary warm */
+#pulseaudio {
+    color: @secondary;
+    padding: 0px 8px;
+}
+
+#pulseaudio:hover {
+    color: @primary;
+    padding: 0px 8px;
+}
+
+#pulseaudio.muted {
+    color: @error;
+}
+
+/* Idle Inhibitor - secondary lavendar */
+#idle_inhibitor {
+    color: @secondary;
+}
+
+#idle_inhibitor:hover {
+    color: @primary;
+}
+
+#idle_inhibitor.activated {
+    color: @tertiary;
+    background-color: alpha(@tertiary, 0.14);
+    border-radius: 20px;
+}
+
+/* Notification - primary soft */
+#custom-notification {
+    color: @primary;
+    padding: 0px 11px;
+    padding-left: 11px;
+    font-size: 15px;
+}
+
+#custom-notification:hover {
+    color: alpha(@primary, 0.85);
+}
+
+/* =============================================================================
+ *  SYSTEM TRAY
+ * =============================================================================
+ */
+
+#tray {
+    background-color: alpha(@surface, 0.75);
+    padding: 2px 14px;
+    margin: 2px 6px;
+}
+
+#tray:hover {
+    background-color: alpha(@surface_variant, 0.92);
+}
+
+#tray>.passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray>.needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: alpha(@error, 0.40);
+    border-radius: 20px;
+}
+
+/* =============================================================================
+ *  POWER BUTTON — accent primary
+ * =============================================================================
+ */
+
+#custom-power {
+    background: alpha(@surface, 0.75);
+    color: @primary;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0px 12px;
+    padding-left: 11px;
+    border: 2px solid alpha(@primary, 0.25);
+    border-radius: 100%;
+}
+
+#custom-power:hover {
+    background: alpha(@primary, 0.25);
+}
+
+/* =============================================================================
+ *  ACCESSIBILITY & UTILITY
+ * =============================================================================
+ */
+
+tooltip {
+    background-color: alpha(@surface, 0.85);
+    border: 2px solid alpha(@primary, 0.30);
+    border-radius: 20px;
+    color: @on_surface;
+    padding: 8px 12px;
+    margin-top: 5px;
+}
+
+tooltip label {
+    color: @on_surface;
+    font-weight: 500;
+}

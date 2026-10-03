@@ -1,0 +1,43 @@
+/* Base styles & typography + module base */
+* {
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Symbols Nerd Font", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @on_surface;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+window#waybar.hidden {
+    opacity: 0;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: transparent;
+}
+
+.modules-left>widget>*,
+.modules-center>widget>*,
+.modules-right>widget>* {
+    background-color: alpha(@surface, 0.75);
+    color: @on_surface;
+    border-radius: 20px;
+    padding: 2px 14px;
+    margin: 2px 4px;
+    border: 2px solid alpha(@primary, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 13px;
+}
+
+.modules-left>widget>*:hover,
+.modules-center>widget>*:hover,
+.modules-right>widget>*:hover {
+    background-color: alpha(@surface_variant, 0.92);
+}

@@ -1,0 +1,8 @@
+// tray module
+{
+    "tray": {
+        "icon-size": 16,
+        "spacing": 12,
+        "show-passive-items": true
+    }
+}

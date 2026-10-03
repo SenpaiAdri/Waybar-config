@@ -1,0 +1,16 @@
+/* Clock — accent with primary */
+#clock {
+    background: alpha(@surface, 0.75);
+    color: @primary;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 2px 16px;
+    margin: 2px 0;
+    border: 2px solid alpha(@primary, 0.50);
+    letter-spacing: 0.8px;
+}
+
+#clock:hover {
+    background-color: alpha(@surface_variant, 0.92);
+    color: @primary;
+}
