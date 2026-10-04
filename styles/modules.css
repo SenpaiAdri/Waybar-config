@@ -18,8 +18,8 @@
     color: @bar_fg;
     background: transparent;
     border: none;
-    font-size: 14px;
-    padding: 0 8px;
+    font-size: 15px;
+    padding: 2px 10px 0 10px;
 }
 
 #pulseaudio:hover {
@@ -35,8 +35,8 @@
     color: @bar_fg;
     background: transparent;
     border: none;
-    font-size: 11px;
-    padding: 0 8px;
+    font-size: 12px;
+    padding: 0 10px 0 10px;
 }
 
 #network:hover {
@@ -69,11 +69,11 @@
     border: 1px solid alpha(@bar_fg, 0.85);
     border-radius: 6px;
     font-size: 9px;
-    font-weight: 700;
-    min-width: 24px;
-    padding: 0 4px;
+    /* font-weight: 700; */
+    min-width: 22px;
+    padding: 0 3px;
     /* Inset vertically so the box doesn't span the full bar height */
-    margin: 6px 6px 6px 1px;
+    margin: 6px 6px 6px 0px;
 }
 
 #battery:hover {
@@ -83,7 +83,7 @@
 #battery.charging,
 #battery.plugged {
     color: @bar_fg;
-    background-color: alpha(@bar_fg, 0.14);
+    /* background-color: alpha(@bar_fg, 0.14); */
     border-color: @bar_fg;
 }
 
@@ -98,7 +98,7 @@
     border: 1px solid @error;
     border-radius: 6px;
     color: @error;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-size: 9px;
     min-width: 24px;
     padding: 0 4px;
@@ -142,7 +142,7 @@
     background: transparent;
     border: none;
     font-size: 14px;
-    padding: 0 6px 0 8px;
+    padding: 0 10px 1px 8px;
 }
 
 #custom-notification:hover {
