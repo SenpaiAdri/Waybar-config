@@ -47,6 +47,10 @@
     color: @error;
 }
 
+#network.disabled {
+    color: alpha(@bar_fg, 0.45);
+}
+
 /* Battery charging bolt — deliberately OUTSIDE the battery box, no border */
 #custom-battery-bolt {
     color: @bar_fg;
@@ -71,7 +75,7 @@
     font-size: 9px;
     /* font-weight: 700; */
     min-width: 22px;
-    padding: 0 3px;
+    padding: 0 3px 0 4px;
     /* Inset vertically so the box doesn't span the full bar height */
     margin: 6px 6px 6px 0px;
 }

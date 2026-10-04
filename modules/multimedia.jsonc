@@ -30,8 +30,10 @@
     "format-ethernet": "󰈀",
     "format-linked": "󰈀",
     "format-disconnected": "󰖪",
+    "format-disabled": "󰖪",
     // "format-alt": "󰈀  {bandwidthDownBits}    󰈀  {bandwidthUpBits}",
     "tooltip-format": "Network: {essid}\nSignal Strength: {signalStrength}%",
+    "tooltip-format-disabled": "Wi-Fi is off — click to manage",
     "on-click": "quickshell ipc call wifi toggle",
   },
   "bluetooth": {
