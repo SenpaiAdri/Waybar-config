@@ -1,21 +1,12 @@
-// clock module
+// clock module — click toggles the quickshell Dynamic Island calendar
 {
     "clock": {
         "format": "{:%I:%M %p      %a  %d  %b}",
         // "format-alt": "{:%Y-%m-%d   %H:%M:%S}",
-        "tooltip-format": "<tt><big>{calendar}</big></tt>",
-        "calendar": {
-            "mode": "month",
-            "mode-mon-col": 3,
-            // "weeks-pos": "right",
-            "on-scroll": 1,
-            "format": {
-                // "months": "<span color='#f5e0dc'><b>{}</b></span>",
-                "days": "<span color='#cdd6f4'>{}</span>",
-                "weeks": "<span color='#94e2d5'><b>W{}</b></span>",
-                "weekdays": "<span color='#f9e2af'><b>{}</b></span>",
-                "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
-            }
-        }
+        "on-click": "quickshell ipc call island toggle",
+        "on-click-right": "quickshell ipc call island toggle",
+        "on-click-middle": "quickshell ipc call island toggle",
+        // Native hover calendar removed — the Dynamic Island is the date popup now.
+        "tooltip": false
     }
 }
