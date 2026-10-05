@@ -7,24 +7,12 @@
         "on-click": "~/.config/waybar/scripts/power-menu.sh"
     },
     "custom/notification": {
-        "tooltip": false,
-        "format": "{icon}",
-        "format-icons": {
-            "notification": "<span foreground='red'><sup></sup></span>",
-            "none": "",
-            "dnd-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-none": "",
-            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "inhibited-none": "",
-            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-            "dnd-inhibited-none": ""
-        },
+        "tooltip": true,
         "return-type": "json",
-        "exec-if": "which swaync-client",
-        "exec": "swaync-client -swb",
-        "on-click": "swaync-client -t -sw",
-        "on-click-right": "swaync-client -d -sw",
-        "escape": true
+        "exec": "~/.config/waybar/scripts/notification-status.sh",
+        "interval": 2,
+        "on-click": "quickshell ipc call notifs toggle",
+        "on-click-right": "quickshell ipc call notifs dnd"
     },
     "custom/profile": {
         "format": "{}",
