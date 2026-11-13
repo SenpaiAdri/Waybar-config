@@ -33,6 +33,7 @@
         "network",
         "custom/battery-bolt",
         "battery",
-        "custom/notification"
+        "custom/notification",
+        "custom/control-center"
     ]
 }
