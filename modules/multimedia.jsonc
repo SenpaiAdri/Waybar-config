@@ -20,7 +20,7 @@
       "car": "󰄋",
       "default": ["󰕿", "󰖀", "󰕾"],
     },
-    "on-click": "quickshell ipc call sound toggle",
+    "on-click": "~/.config/waybar/scripts/popup.sh sound",
     "on-click-middle": "pavucontrol",
     "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "tooltip-format": "{desc}\nVolume: {volume}%",
@@ -37,7 +37,7 @@
     "tooltip-format-ethernet": "Ethernet · {ifname}",
     "tooltip-format-disconnected": "Disconnected · Click to manage Wi-Fi",
     "tooltip-format-disabled": "Wi-Fi is off — click to manage",
-    "on-click": "quickshell ipc call wifi toggle",
+    "on-click": "~/.config/waybar/scripts/popup.sh wifi",
   },
   "bluetooth": {
     "format": "",

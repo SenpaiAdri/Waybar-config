@@ -3,7 +3,7 @@
     "custom/control-center": {
         "format": "󰒓",
         "tooltip-format": "Control Center",
-        "on-click": "quickshell ipc call controls toggle"
+        "on-click": "~/.config/waybar/scripts/popup.sh controls"
     },
     "custom/power": {
         "format": "󰐥",
@@ -16,7 +16,7 @@
         "return-type": "json",
         "exec": "~/.config/waybar/scripts/notification-status.sh",
         "interval": 2,
-        "on-click": "quickshell ipc call notifs toggle",
+        "on-click": "~/.config/waybar/scripts/popup.sh notifs",
         "on-click-right": "quickshell ipc call notifs dnd"
     },
     "custom/profile": {
