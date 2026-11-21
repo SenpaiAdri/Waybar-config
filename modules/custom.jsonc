@@ -1,7 +1,7 @@
 // custom modules: power + notification + profile
 {
     "custom/control-center": {
-        "format": "󰒓",
+        "format": "⌘",
         "tooltip-format": "Control Center",
         "on-click": "~/.config/waybar/scripts/popup.sh controls"
     },
