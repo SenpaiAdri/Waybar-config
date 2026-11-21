@@ -3,7 +3,7 @@
 set -u
 target="${1:-}"
 case "$target" in
-    controls|sound|wifi|notifs) ;;
+    controls|sound|wifi|notifs|profile) ;;
     *) exit 2 ;;
 esac
 fallback() { exec quickshell ipc call "$target" toggle; }

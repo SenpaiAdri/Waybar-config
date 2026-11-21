@@ -8,9 +8,9 @@ import subprocess
 import sys
 
 LABELS = {
-    "performance": ("󰓅", "Performance on", "performance"),
-    "balanced": ("󰾅", "Performance off · Balanced", "balanced"),
-    "power-saver": ("󰾆", "Performance off · Power Saver", "power-saver"),
+    "performance": ("󰓅", "Performance", "performance"),
+    "balanced": ("󰾅", "Balanced", "balanced"),
+    "power-saver": ("󰾆", "Power Saver", "power-saver"),
 }
 ORDER = ("power-saver", "balanced", "performance")
 
@@ -54,12 +54,9 @@ def next_profile(current, available, cycle=False):
 
 def status(current, available, error=""):
     icon, label, css = LABELS[current]
-    if "performance" in available:
-        hint = "Click: toggle Performance\nRight-click: cycle available profiles"
-    else:
-        hint = "Performance mode unsupported\nRight-click: cycle available profiles"
+    hint = "Click to choose a power profile"
     return {"text": icon, "tooltip": label + "\n" + (error or hint), "class": css,
-            "alt": current, "profiles": available}
+            "alt": current, "profiles": available, "error": error}
 
 
 def notify(message):
@@ -73,15 +70,18 @@ def notify(message):
 
 def main(argv):
     action = argv[0] if argv else "status"
-    if action not in ("status", "--status", "toggle", "--toggle", "next", "cycle", "--cycle"):
-        print("Usage: power-profile.sh [status|toggle|cycle]", file=sys.stderr)
+    explicit = action == "set" and len(argv) == 2 and argv[1] in ORDER
+    if not explicit and action not in ("status", "--status", "toggle", "--toggle", "next", "cycle", "--cycle"):
+        print("Usage: power-profile.sh [status|toggle|cycle|set PROFILE]", file=sys.stderr)
         return 2
     changing = action not in ("status", "--status")
     current, available = None, []
     try:
         current, available = state()
         if changing:
-            target = next_profile(current, available, action in ("next", "cycle", "--cycle"))
+            target = argv[1] if explicit else next_profile(current, available, action in ("next", "cycle", "--cycle"))
+            if target not in available:
+                raise RuntimeError("The requested power profile is unavailable")
             if target != current:
                 run("set", target)
                 # Read the authoritative state: failed or inhibited transitions must
@@ -94,13 +94,14 @@ def main(argv):
     except (OSError, RuntimeError, subprocess.TimeoutExpired) as exc:
         error = str(exc)
         if changing:
-            notify(error)
+            if not explicit:
+                notify(error)
             print(error, file=sys.stderr)
         if current:
             print(json.dumps(status(current, available, error), ensure_ascii=False))
         else:
             print(json.dumps({"text": "󰓅", "tooltip": "Power profiles unavailable\n" + error,
-                              "class": "unavailable", "alt": "unavailable"}, ensure_ascii=False))
+                              "class": "unavailable", "alt": "unavailable", "error": error}, ensure_ascii=False))
         return 1 if changing else 0
 
 
